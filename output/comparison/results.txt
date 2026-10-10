@@ -1,0 +1,16 @@
+TRANSFORM CODING RESULTS
+========================
+
+Original image: 1535 x 2048
+Padded image: 1536 x 2048
+Block size: 8 x 8
+Total blocks: 49152
+
+Coefficient retention:
+50% = 32 coefficients
+25% = 16 coefficients
+
+DFT 50% MSE: 1.423061
+DFT 25% MSE: 7.172097
+DCT 50% MSE: 0.102844
+DCT 25% MSE: 1.370216

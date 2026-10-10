@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform Coding Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header class="header">
+    <h1>Transform Coding Analyzer</h1>
+    <p>DFT vs DCT Image Transform Analysis</p>
+</header>
+
+<main class="container">
+
+    <!-- Input -->
+    <section class="card">
+        <h2>Input Image</h2>
+
+        <input type="file" id="imageInput" accept="image/*">
+
+        <div id="preview" class="preview">
+            <p>No image selected</p>
+        </div>
+
+        <div class="analyze-container">
+            <button id="analyzeButton" disabled>
+                Analyze Image
+            </button>
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section id="results" class="card results" style="display:none;">
+
+        <h2>Results</h2>
+
+        <div class="info">
+            <p><strong>Original Size:</strong> <span id="originalSize"></span></p>
+            <p><strong>Padded Size:</strong> <span id="paddedSize"></span></p>
+            <p><strong>8×8 Blocks:</strong> <span id="totalBlocks"></span></p>
+        </div>
+
+        <h2>Grayscale Image</h2>
+
+        <div class="image-card">
+            <img id="grayscaleImage" alt="Grayscale Image">
+        </div>
+
+        <h2>Reconstruction Results</h2>
+
+        <div class="results-grid">
+
+            <div class="result-card">
+                <h3>DFT - 50%</h3>
+                <img id="dft50Image" alt="DFT 50% Reconstruction">
+                <p>MSE: <strong id="dft50Mse"></strong></p>
+            </div>
+
+            <div class="result-card">
+                <h3>DFT - 25%</h3>
+                <img id="dft25Image" alt="DFT 25% Reconstruction">
+                <p>MSE: <strong id="dft25Mse"></strong></p>
+            </div>
+
+            <div class="result-card">
+                <h3>DCT - 50%</h3>
+                <img id="dct50Image" alt="DCT 50% Reconstruction">
+                <p>MSE: <strong id="dct50Mse"></strong></p>
+            </div>
+
+            <div class="result-card">
+                <h3>DCT - 25%</h3>
+                <img id="dct25Image" alt="DCT 25% Reconstruction">
+                <p>MSE: <strong id="dct25Mse"></strong></p>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
